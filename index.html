@@ -657,7 +657,7 @@
           <span class="text-base sm:text-lg mb-0.5">📍</span>
           <span class="block text-[10px] uppercase font-bold text-amber-900 tracking-wider">Lugar</span>
           <span class="font-title font-bold text-xs sm:text-sm text-emerald-950 leading-tight">
-            Pizarro 84
+            Pizarro 184
           </span>
           <span class="text-[10px] text-amber-800 font-semibold">Te esperamos</span>
         </div>
@@ -739,8 +739,10 @@
           ¡Ayuda a la cigüeña en la selva de Claire! 🦁✨
         </h2>
         <p class="text-xs sm:text-sm text-gray-600 max-w-md mx-auto">
-          Toca o haz clic para volar y esquivar <span class="font-bold text-emerald-700">20 cañas de bambú y flores</span>.
-          <strong class="text-rose-600 block sm:inline mt-1 sm:mt-0 font-semibold">¡Los que completen el reto reclaman su premio especial con Jheremy y Estefany el día de la fiesta! 🎁</strong>
+          Toca o haz clic para volar y esquivar <span class="font-bold text-emerald-700">20 cañas de bambú y
+            flores</span>.
+          <strong class="text-rose-600 block sm:inline mt-1 sm:mt-0 font-semibold">¡Los que completen el reto reclaman
+            su premio especial con Jheremy y Estefany el día de la fiesta! 🎁</strong>
         </p>
       </div>
 
@@ -775,7 +777,8 @@
           <div class="text-4xl mb-1 animate-bounce">🏆🦁🎁</div>
           <h3 class="font-title text-2xl font-bold text-amber-300 mb-0.5">¡Misión Cumplida!</h3>
           <p class="text-[11px] text-amber-100 mb-2.5 max-w-[260px] leading-tight">
-            ¡Completaste los 20 niveles cruzando la selva! Registra tu nombre para reclamar tu premio con Jheremy y Estefany.
+            ¡Completaste los 20 niveles cruzando la selva! Registra tu nombre para reclamar tu premio con Jheremy y
+            Estefany.
           </p>
 
           <!-- Formulario de Registro -->
@@ -829,7 +832,8 @@
 
       <!-- Barra informativa del juego -->
       <div class="mt-3 flex items-center justify-center text-xs font-semibold">
-        <span class="flex items-center gap-1.5 bg-amber-100/90 text-amber-950 px-4 py-1.5 rounded-full border border-amber-300 shadow-sm">
+        <span
+          class="flex items-center gap-1.5 bg-amber-100/90 text-amber-950 px-4 py-1.5 rounded-full border border-amber-300 shadow-sm">
           <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
           <span>Objetivo: 20 niveles para ganar tu premio</span>
           <span>🏆</span>
@@ -1167,7 +1171,7 @@
         class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-emerald-950/60 border border-amber-400/40 backdrop-blur-sm mb-2 shadow-lg">
         <span>🦁</span>
         <span class="font-title text-sm font-bold text-amber-300">¡Te esperamos para celebrar a la pequeña
-          Claire!</span>
+          <span id="footerBabyName">Claire</span>!</span>
         <span>🎀</span>
       </div>
       <p class="font-medium text-amber-100/90 mb-1">
@@ -1190,12 +1194,21 @@
       /* ---------------------------------------------------- */
       /* A. INICIALIZAR DATOS DINÁMICOS DESDE CONFIG          */
       /* ---------------------------------------------------- */
-      document.getElementById('pageTitle').innerText = `¡Baby Shower de ${CONFIG.babyName}! 🍼✨`;
-      document.getElementById('heroBabyName').innerText = CONFIG.babyName;
-      document.getElementById('footerBabyName').innerText = CONFIG.babyName;
-      document.getElementById('heroSubtitle').innerText = CONFIG.eventSubtitle;
-      document.getElementById('heroDateDisplay').innerText = CONFIG.eventDateText;
-      document.getElementById('heroTimeDisplay').innerText = CONFIG.eventTimeText;
+      function setTextSafe(id, text) {
+        const el = document.getElementById(id);
+        if (el) el.innerText = text;
+      }
+      function setHrefSafe(id, href) {
+        const el = document.getElementById(id);
+        if (el) el.href = href;
+      }
+
+      setTextSafe('pageTitle', `¡Baby Shower de ${CONFIG.babyName}! 🍼✨`);
+      setTextSafe('heroBabyName', CONFIG.babyName);
+      setTextSafe('footerBabyName', CONFIG.babyName);
+      setTextSafe('heroSubtitle', CONFIG.eventSubtitle);
+      setTextSafe('heroDateDisplay', CONFIG.eventDateText);
+      setTextSafe('heroTimeDisplay', CONFIG.eventTimeText);
 
       // Configurar Enlace a Google Calendar
       const calendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE`
@@ -1203,15 +1216,15 @@
         + `&dates=${CONFIG.calendarStartDate}/${CONFIG.calendarEndDate}`
         + `&details=${encodeURIComponent(CONFIG.calendarDetails)}`
         + `&location=${encodeURIComponent(CONFIG.calendarLocation)}`;
-      document.getElementById('btnCalendarLink').href = calendarUrl;
+      setHrefSafe('btnCalendarLink', calendarUrl);
 
       // Configurar Enlace a Google Maps
       const mapsUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(CONFIG.mapsCoords)}`;
-      document.getElementById('btnMapsLink').href = mapsUrl;
+      setHrefSafe('btnMapsLink', mapsUrl);
 
       // Configurar Enlace a WhatsApp
       const waUrl = `https://wa.me/${CONFIG.whatsappNumber}?text=${encodeURIComponent(CONFIG.whatsappMessage)}`;
-      document.getElementById('btnWhatsAppLink').href = waUrl;
+      setHrefSafe('btnWhatsAppLink', waUrl);
 
       /* ---------------------------------------------------- */
       /* 1. MÚSICA DE FONDO (Garantizada Local & Online)      */

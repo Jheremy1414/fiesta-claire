@@ -8,3 +8,7 @@ __pycache__/
 # Archivos temporales del sistema
 Thumbs.db
 .DS_Store
+
+
+temp_edge_profile/
+

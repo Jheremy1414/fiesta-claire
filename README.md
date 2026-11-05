@@ -5,7 +5,7 @@ Invitación interactiva y animada para el Baby Shower de **Claire**.
 - **Papás:** Jheremy y Estefany
 - **Fecha:** Sábado 7 de Noviembre de 2026
 - **Hora:** 16:00 Hrs.
-- **Lugar:** Calle Pizarro 84
+- **Lugar:** Calle Pizarro 184
 - **Temática:** El Libro de la Selva & Leoncita Durmiendo sobre Flores
 
 ## ✨ Características
@@ -16,3 +16,4 @@ Invitación interactiva y animada para el Baby Shower de **Claire**.
 - 🎮 Minijuego Safari Arcade de 20 niveles con registro de ganadores en línea (Supabase).
 - 💌 Cochecito de los Deseos con efecto 3D flotante y muro de dedicatorias en tiempo real (Supabase).
 - 📱 Diseño 100% responsivo para celulares y computadoras con Tailwind CSS.
+

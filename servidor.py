@@ -1,14 +1,16 @@
 """
-Servidor HTTP Local con Soporte Completo de Audio Streaming (HTTP 206 Partial Content)
-Ideal para probar el Baby Shower en Chrome, Edge y Móvil sin errores de conexión.
+Servidor HTTP Local Multihilo con Soporte Avanzado de Streaming (HTTP 206 Partial Content)
+Diseñado para reproducir musica.mp3 sin cortes, sin bloqueos y sin errores de desconexión.
 """
 
 import os
 import re
 import sys
-from http.server import HTTPServer, SimpleHTTPRequestHandler
+import shutil
+from http.server import ThreadingHTTPServer, SimpleHTTPRequestHandler
 
 class RangeFileWrapper:
+    """Envuelve un archivo para transmitir únicamente el rango de bytes solicitado por el navegador."""
     def __init__(self, f, length):
         self.f = f
         self.remaining = length
@@ -39,7 +41,7 @@ class BabyShowerRequestHandler(SimpleHTTPRequestHandler):
 
         file_size = os.path.getsize(path)
 
-        # Si el navegador solicita un fragmento de audio (HTTP Range)
+        # Soporte completo de HTTP Range (Streaming fluido para navegadores móviles y desktop)
         if 'Range' in self.headers:
             range_header = self.headers['Range']
             match = re.match(r'bytes=(\d+)-(\d*)', range_header)
@@ -65,6 +67,19 @@ class BabyShowerRequestHandler(SimpleHTTPRequestHandler):
 
         return super().send_head()
 
+    def copyfile(self, source, outputfile):
+        """Transmite datos al cliente capturando desconexiones normales del navegador (Range abort)."""
+        try:
+            shutil.copyfileobj(source, outputfile, length=64 * 1024)
+        except (ConnectionResetError, ConnectionAbortedError, BrokenPipeError):
+            pass  # Desconexión normal del navegador al cambiar de fragmento o pausar
+
+    def handle_one_request(self):
+        try:
+            super().handle_one_request()
+        except (ConnectionResetError, ConnectionAbortedError, BrokenPipeError):
+            pass
+
     def log_message(self, format, *args):
         # Muestra peticiones limpias sin spam ni errores de desconexión normal
         sys.stdout.write(f"[{self.log_date_time_string()}] {format % args}\n")
@@ -72,13 +87,18 @@ class BabyShowerRequestHandler(SimpleHTTPRequestHandler):
 def run(port=8000):
     os.chdir(os.path.dirname(os.path.abspath(__file__)))
     server_address = ('', port)
-    httpd = HTTPServer(server_address, BabyShowerRequestHandler)
-    print("=" * 60)
+    
+    # Servidor multihilo para atender streaming y clics simultáneamente
+    httpd = ThreadingHTTPServer(server_address, BabyShowerRequestHandler)
+    httpd.daemon_threads = True
+    
+    print("=" * 65)
     print(f" 🍼 Baby Shower Web Server Activo!")
     print(f" 👉 Abre en tu navegador: http://localhost:{port}")
-    print(f" 🎵 Streaming de audio fluido sin cortes activado (HTTP 206)")
+    print(f" 🎵 Streaming multihilo activo (HTTP 206 Partial Content)")
     print(f" 🛑 Presiona Ctrl + C en esta ventana para detenerlo")
-    print("=" * 60)
+    print("=" * 65)
+    
     try:
         httpd.serve_forever()
     except KeyboardInterrupt:
@@ -88,4 +108,3 @@ def run(port=8000):
 if __name__ == '__main__':
     port = int(sys.argv[1]) if len(sys.argv) > 1 else 8000
     run(port)
-
