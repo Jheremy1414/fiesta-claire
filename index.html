@@ -453,14 +453,13 @@
       babyName: "Claire",
       parentsNames: "Jheremy y Estefany",
       partyTitle: "¡BIENVENIDOS A LA FIESTA!",
-      partySubtitle: "Celebramos con alegría y gratitud este día tan especial. Llena nuestro festejo de amor, sonrisas y tus mejores deseos en nuestro cochecito.",
-      partyDatePlace: "Sábado 7 de Noviembre de 2026 • Calle Pizarro 84",
+      partySubtitle: "¡Qué inmensa alegría tenerte aquí con nosotros! Gracias por acompañarnos a celebrar la vida de nuestra pequeña princesa. Por favor déjanos tu dedicatoria en vivo en el cochecito de bendiciones.",
 
       // 2. MÚSICA DE FONDO (Exclusivamente tu archivo local musica.mp3)
       musicUrl: "musica.mp3",
       youtubeVideoId: "",
 
-      // 3. SUPABASE (Para el Cochecito y Cartas de Deseos)
+      // 3. SUPABASE (Para el Cochecito y Cartas de Deseos en Vivo)
       supabaseUrl: "https://netzjpsrjlrceemjbpze.supabase.co",
       supabaseKey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5ldHpqcHNyamxyY2VlbWpicHplIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTM4ODU0NjksImV4cCI6MjEwOTQ2MTQ2OX0.wboZWs5jE-yj-Xk6-2k7MoJ-pN414Cvj4VKq6W4ZBbU",
     };
@@ -608,34 +607,35 @@
       <!-- Mensaje de Bienvenida -->
       <p id="heroSubtitle"
         class="text-emerald-950 font-medium text-xs sm:text-sm max-w-md mx-auto leading-relaxed mb-4 italic">
-        Celebramos con alegría y gratitud este día tan especial. Llena nuestro festejo de amor, sonrisas y tus mejores deseos en nuestro cochecito.
+        ¡Qué inmensa alegría tenerte aquí con nosotros! Gracias por acompañarnos a celebrar la vida de nuestra pequeña princesa. Por favor déjanos tu dedicatoria en vivo en el cochecito de bendiciones.
       </p>
 
-      <!-- Placa Festiva del Evento -->
-      <div class="inline-flex items-center gap-2 wood-ribbon px-4 sm:px-6 py-2 rounded-2xl text-amber-950 font-title font-bold text-xs sm:text-sm shadow-md">
-        <span>🎉</span>
-        <span id="heroDatePlaceDisplay">Sábado 7 de Noviembre de 2026 • Calle Pizarro 84</span>
-        <span>🎉</span>
+      <!-- Indicador Profesional de Dedicatorias en Vivo -->
+      <div class="inline-flex items-center gap-2 bg-[#FEF3C7] border-2 border-amber-400 text-amber-950 font-title font-bold text-xs sm:text-sm px-5 py-2 rounded-full shadow-md animate-pulseSubtle">
+        <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping"></span>
+        <span>Dedicatorias en Vivo para Claire</span>
+        <span>💌✨</span>
       </div>
 
     </header>
 
     <!-- ======================================================== -->
-    <!-- 3. EL COCHECITO DE LOS DESEOS Y BENDICIONES              -->
+    <!-- 3. DEDICATORIAS EN VIVO: EL COCHECITO DE LAS BENDICIONES -->
     <!-- ======================================================== -->
     <section class="glass-card rounded-3xl p-5 sm:p-7 relative overflow-hidden border-4 border-amber-400/90 shadow-2xl">
 
       <div class="text-center mb-3">
         <span
-          class="inline-flex items-center gap-1.5 bg-gradient-to-r from-amber-600 via-amber-700 to-amber-800 text-amber-100 text-xs font-bold uppercase tracking-wider px-4 py-1.5 rounded-full mb-2 shadow-md border border-amber-300">
-          <span>🌿</span> Cochecito de las Bendiciones <span>🎀</span>
+          class="inline-flex items-center gap-2 bg-gradient-to-r from-amber-600 via-amber-700 to-amber-800 text-amber-100 text-xs font-bold uppercase tracking-wider px-4 py-1.5 rounded-full mb-2 shadow-md border border-amber-300">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+          <span>Dedicatorias en Vivo</span>
+          <span>🎀</span>
         </span>
         <h2 class="font-title text-2xl sm:text-3xl font-bold text-emerald-950 mb-1">
-          Cartas de Amor para Claire 💕
+          Cochecito de las Bendiciones 💕
         </h2>
         <p class="text-xs sm:text-sm text-gray-600 max-w-sm mx-auto">
-          Los mejores deseos flotan alrededor del cochecito de la pequeña princesa como suaves hojas de amor en la
-          brisa.
+          Tus mensajes vuelan en tiempo real alrededor del cochecito de Claire como suaves cartas de amor en la brisa.
         </p>
       </div>
 
@@ -905,11 +905,11 @@
       <div class="mt-4 pt-3 border-t-2 border-amber-200/80">
         <div class="text-center mb-2.5">
           <span
-            class="inline-flex items-center gap-1.5 bg-gradient-to-r from-amber-600 to-amber-700 text-amber-100 text-xs font-bold uppercase tracking-wider px-3.5 py-1 rounded-full shadow border border-amber-300">
-            <span>✍️</span> Escríbele una Carta a Claire <span>🦁</span>
+            class="inline-flex items-center gap-1.5 bg-gradient-to-r from-emerald-600 to-teal-700 text-white text-xs font-bold uppercase tracking-wider px-4 py-1 rounded-full shadow border border-amber-300">
+            <span>✍️</span> Déjale tu Dedicatoria en Vivo <span>🦁</span>
           </span>
           <h4 class="font-title font-bold text-emerald-950 text-sm mt-1.5">
-            Deja tus bendiciones para que vuelen con el cochecito
+            Escribe tus bendiciones para que vuelen con el cochecito al instante
           </h4>
         </div>
 
@@ -927,7 +927,7 @@
             <label for="userMessageInput" class="block text-xs font-bold text-amber-950 uppercase tracking-wider mb-1">
               Tu Mensaje de Amor:
             </label>
-            <textarea id="userMessageInput" rows="3" placeholder="Escribe tus bendiciones, oraciones y buenos deseos..."
+            <textarea id="userMessageInput" rows="3" placeholder="Escribe tus bendiciones, oraciones y buenos deseos en vivo..."
               maxlength="300"
               class="w-full px-3.5 py-2.5 text-xs sm:text-sm rounded-xl border border-amber-300 bg-white focus:outline-none focus:ring-2 focus:ring-emerald-500 resize-none font-medium"></textarea>
           </div>
@@ -936,7 +936,7 @@
 
           <button type="submit" id="btnSubmitWish"
             class="w-full btn-bounce bg-gradient-to-r from-emerald-600 via-emerald-700 to-teal-800 hover:from-emerald-500 hover:to-teal-700 text-white font-title text-sm sm:text-base font-bold py-3 px-4 rounded-xl shadow-lg border-2 border-amber-300 transition flex items-center justify-center gap-2 cursor-pointer">
-            <span>Enviar Carta al Cochecito</span>
+            <span>Publicar Dedicatoria en Vivo</span>
             <span>🕊️💕🌿</span>
           </button>
         </form>
@@ -954,10 +954,10 @@
         <span>🎀</span>
       </div>
       <p class="font-medium text-amber-100/90 mb-1">
-        Jheremy y Estefany • Sábado 7 de Noviembre de 2026 • Calle Pizarro 84
+        Con todo el amor de Jheremy y Estefany 💕
       </p>
       <p class="text-[11px] text-amber-300/60">
-        Inspirado en El Libro de la Selva 🌿 Hecho con todo el amor de la familia
+        Inspirado en El Libro de la Selva 🌿 Fiesta de la Princesa Claire
       </p>
     </footer>
 
@@ -982,7 +982,6 @@
       setTextSafe('heroBabyName', CONFIG.babyName);
       setTextSafe('footerBabyName', CONFIG.babyName);
       setTextSafe('heroSubtitle', CONFIG.partySubtitle);
-      setTextSafe('heroDatePlaceDisplay', CONFIG.partyDatePlace);
 
       /* ---------------------------------------------------- */
       /* 1. MÚSICA DE FONDO (Garantizada Local & Online)      */
