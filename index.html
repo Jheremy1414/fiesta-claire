@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title id="pageTitle">¡Baby Shower de Claire! 🍼✨</title>
+  <title id="pageTitle">¡Bienvenidos a la Fiesta de Claire! 🦁🎉✨</title>
 
   <!-- Google Fonts: Fredoka & Plus Jakarta Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -449,35 +449,18 @@
   <!-- ========================================================================= -->
   <script>
     const CONFIG = {
-      // 1. NOMBRE DE LA BEBÉ Y PAPÁS (Inspirado en la tarjeta del Libro de la Selva)
+      // 1. NOMBRE DE LA BEBÉ Y PAPÁS (Temática Libro de la Selva)
       babyName: "Claire",
       parentsNames: "Jheremy y Estefany",
-      princessSubtitle: "Nuestra pequeña princesa está en camino",
+      partyTitle: "¡BIENVENIDOS A LA FIESTA!",
+      partySubtitle: "Celebramos con alegría y gratitud este día tan especial. Llena nuestro festejo de amor, sonrisas y tus mejores deseos en nuestro cochecito.",
+      partyDatePlace: "Sábado 7 de Noviembre de 2026 • Calle Pizarro 84",
 
-      // 2. FECHA Y HORA DEL EVENTO (Según la invitación)
-      eventDateText: "Sábado 7 de Noviembre de 2026",
-      eventTimeText: "16:00 Hrs.",
-      eventSubtitle: "Acompáñanos a celebrar la pronta llegada de nuestra pequeña bendición. Llena nuestro día de amor, risas y buenos deseos.",
-
-      // 3. AGENDAR EN GOOGLE CALENDAR
-      calendarTitle: "Baby Shower de Claire Borja Romero",
-      calendarStartDate: "20261107T200000Z", // 16:00 Bolivia (UTC-4) = 20:00 UTC
-      calendarEndDate: "20261107T230000Z",
-      calendarDetails: "¡Acompáñanos a celebrar el Baby Shower de Claire! Jheremy y Estefany te esperan con mucho amor en la fiesta temática del Libro de la Selva.",
-      calendarLocation: "Calle Pizarro 184",
-
-      // 4. CÓMO LLEGAR (GOOGLE MAPS)
-      mapsCoords: "-19.584523, -65.747328",
-
-      // 5. CONFIRMAR POR WHATSAPP
-      whatsappNumber: "59160467987",
-      whatsappMessage: "¡Hola Jheremy y Estefany! Confirmo mi asistencia al Baby Shower de Claire. ¡Ahí nos vemos con mucha alegría! 🦁🍼✨",
-
-      // 6. MÚSICA DE FONDO (Exclusivamente tu archivo local musica.mp3)
+      // 2. MÚSICA DE FONDO (Exclusivamente tu archivo local musica.mp3)
       musicUrl: "musica.mp3",
       youtubeVideoId: "",
 
-      // 7. SUPABASE (Para el Muro de Deseos y Registro de Ganadores)
+      // 3. SUPABASE (Para el Cochecito y Cartas de Deseos)
       supabaseUrl: "https://netzjpsrjlrceemjbpze.supabase.co",
       supabaseKey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5ldHpqcHNyamxyY2VlbWpicHplIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTM4ODU0NjksImV4cCI6MjEwOTQ2MTQ2OX0.wboZWs5jE-yj-Xk6-2k7MoJ-pN414Cvj4VKq6W4ZBbU",
     };
@@ -553,7 +536,7 @@
   <main class="relative z-10 max-w-xl mx-auto px-4 py-8 sm:py-12 flex flex-col gap-10">
 
     <!-- ======================================================== -->
-    <!-- 2. HERO SECTION: TEMÁTICA LIBRO DE LA SELVA              -->
+    <!-- 2. HERO SECTION: BIENVENIDA A LA FIESTA DE CLAIRE        -->
     <!-- ======================================================== -->
     <header class="glass-card rounded-3xl p-5 sm:p-7 text-center relative overflow-hidden transition-all duration-300">
 
@@ -561,13 +544,13 @@
       <div class="absolute -top-3 -left-3 text-2xl select-none opacity-80">🌿</div>
       <div class="absolute -top-3 -right-3 text-2xl select-none opacity-80">🌸</div>
 
-      <!-- Tablón de Madera: ¡BABY SHOWER! -->
+      <!-- Tablón de Madera: ¡BIENVENIDOS A LA FIESTA! -->
       <div class="inline-block mb-2">
         <div
           class="wood-board px-5 sm:px-7 py-2 rounded-2xl shadow-xl border-3 border-amber-900 inline-flex items-center gap-2">
           <span class="text-base sm:text-lg">🌿</span>
           <span class="font-title text-lg sm:text-xl font-bold tracking-wider text-white uppercase drop-shadow-md">
-            ¡BABY SHOWER!
+            ¡BIENVENIDOS A LA FIESTA!
           </span>
           <span class="text-base sm:text-lg">🌿</span>
         </div>
@@ -581,15 +564,14 @@
         <span class="bubble-letter text-[#22C55E]">I</span>
         <span class="bubble-letter text-[#FB923C]">R</span>
         <span class="bubble-letter text-[#A855F7]">E</span>
-        <!-- Hook oculto para que no rompa JS existente si busca heroBabyName -->
         <span id="heroBabyName" class="hidden">Claire</span>
       </div>
 
-      <!-- Cinta de Pergamino: Nuestra pequeña princesa está en camino -->
+      <!-- Cinta de Pergamino: ¡Gracias por acompañarnos! -->
       <div
         class="inline-flex items-center gap-2 wood-ribbon px-4 py-1.5 rounded-full text-amber-950 font-title font-bold text-xs sm:text-sm shadow-md mb-3">
         <span>💕</span>
-        <span>Nuestra pequeña princesa está en camino</span>
+        <span>¡Gracias por acompañarnos en este día tan especial!</span>
         <span>💕</span>
       </div>
 
@@ -607,8 +589,8 @@
           <div
             class="absolute -bottom-2.5 left-1/2 -translate-x-1/2 bg-[#FFFBEB] border-2 border-amber-500 text-amber-900 font-title text-[11px] font-bold px-3.5 py-0.5 rounded-full shadow-lg flex items-center gap-1.5 whitespace-nowrap">
             <span>🌸</span>
-            <span>Dulces Sueños, Princesa Claire</span>
-            <span>💤</span>
+            <span>¡Bienvenida Princesa Claire!</span>
+            <span>👑</span>
           </div>
         </div>
       </div>
@@ -623,226 +605,23 @@
         </div>
       </div>
 
-      <!-- Mensaje de Invitación -->
+      <!-- Mensaje de Bienvenida -->
       <p id="heroSubtitle"
-        class="text-emerald-950 font-medium text-xs sm:text-sm max-w-md mx-auto leading-relaxed mb-5 italic">
-        Acompáñanos a celebrar la pronta llegada de nuestra pequeña bendición. Llena nuestro día de amor, risas y buenos
-        deseos.
+        class="text-emerald-950 font-medium text-xs sm:text-sm max-w-md mx-auto leading-relaxed mb-4 italic">
+        Celebramos con alegría y gratitud este día tan especial. Llena nuestro festejo de amor, sonrisas y tus mejores deseos en nuestro cochecito.
       </p>
 
-      <!-- Tarjetas de Fecha, Hora y Lugar estilo Tablones de Safari -->
-      <div class="grid grid-cols-3 gap-2 sm:gap-3 mb-6">
-        <!-- Fecha -->
-        <div class="wood-ribbon p-2.5 rounded-xl text-center flex flex-col items-center justify-center">
-          <span class="text-base sm:text-lg mb-0.5">📅</span>
-          <span class="block text-[10px] uppercase font-bold text-amber-900 tracking-wider">Fecha</span>
-          <span id="heroDateDisplay" class="font-title font-bold text-xs sm:text-sm text-emerald-950 leading-tight">
-            7 de Noviembre
-          </span>
-          <span class="text-[10px] text-amber-800 font-semibold">de 2026</span>
-        </div>
-
-        <!-- Hora -->
-        <div class="wood-ribbon p-2.5 rounded-xl text-center flex flex-col items-center justify-center">
-          <span class="text-base sm:text-lg mb-0.5">⏰</span>
-          <span class="block text-[10px] uppercase font-bold text-amber-900 tracking-wider">Hora</span>
-          <span id="heroTimeDisplay" class="font-title font-bold text-xs sm:text-sm text-emerald-950 leading-tight">
-            16:00 Hrs.
-          </span>
-          <span class="text-[10px] text-amber-800 font-semibold">En punto</span>
-        </div>
-
-        <!-- Lugar -->
-        <div class="wood-ribbon p-2.5 rounded-xl text-center flex flex-col items-center justify-center">
-          <span class="text-base sm:text-lg mb-0.5">📍</span>
-          <span class="block text-[10px] uppercase font-bold text-amber-900 tracking-wider">Lugar</span>
-          <span class="font-title font-bold text-xs sm:text-sm text-emerald-950 leading-tight">
-            Pizarro 184
-          </span>
-          <span class="text-[10px] text-amber-800 font-semibold">Te esperamos</span>
-        </div>
+      <!-- Placa Festiva del Evento -->
+      <div class="inline-flex items-center gap-2 wood-ribbon px-4 sm:px-6 py-2 rounded-2xl text-amber-950 font-title font-bold text-xs sm:text-sm shadow-md">
+        <span>🎉</span>
+        <span id="heroDatePlaceDisplay">Sábado 7 de Noviembre de 2026 • Calle Pizarro 84</span>
+        <span>🎉</span>
       </div>
 
-      <!-- TRES BOTONES PRINCIPALES GRANDES ESTILO TABLÓN SAFARI -->
-      <div class="flex flex-col gap-3.5 sm:gap-4">
-
-        <!-- Botón A: Añadir a Google Calendar -->
-        <a id="btnCalendarLink" href="#" target="_blank" rel="noopener noreferrer"
-          class="group btn-bounce flex items-center justify-between w-full bg-gradient-to-r from-emerald-600 via-emerald-700 to-teal-800 hover:from-emerald-500 hover:to-teal-700 text-white font-title text-base sm:text-lg font-bold py-3.5 px-6 rounded-2xl border-2 border-amber-300 shadow-xl transition-all">
-          <div class="flex items-center gap-3">
-            <span
-              class="w-10 h-10 rounded-xl bg-white/20 border border-white/30 flex items-center justify-center text-xl shadow-sm">
-              🗓️
-            </span>
-            <span class="text-left drop-shadow">Añadir a mi Calendario</span>
-          </div>
-          <svg class="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24"
-            stroke="currentColor" stroke-width="2.5">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
-          </svg>
-        </a>
-
-        <!-- Botón B: Cómo llegar (Google Maps) -->
-        <a id="btnMapsLink" href="#" target="_blank" rel="noopener noreferrer"
-          class="group btn-bounce flex items-center justify-between w-full bg-gradient-to-r from-amber-500 via-amber-600 to-amber-700 hover:from-amber-400 hover:to-amber-600 text-white font-title text-base sm:text-lg font-bold py-3.5 px-6 rounded-2xl border-2 border-amber-300 shadow-xl transition-all">
-          <div class="flex items-center gap-3">
-            <span
-              class="w-10 h-10 rounded-xl bg-white/20 border border-white/30 flex items-center justify-center text-xl shadow-sm">
-              📍
-            </span>
-            <div class="text-left">
-              <span class="block leading-tight drop-shadow">Cómo llegar (Mapa)</span>
-              <span class="text-xs text-amber-100 font-normal font-sans">Ver ruta en Google Maps</span>
-            </div>
-          </div>
-          <svg class="w-5 h-5 text-white transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24"
-            stroke="currentColor" stroke-width="2.5">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
-          </svg>
-        </a>
-
-        <!-- Botón C: Confirmar Asistencia (WhatsApp Deep Link) -->
-        <a id="btnWhatsAppLink" href="#" target="_blank" rel="noopener noreferrer"
-          class="group btn-bounce flex items-center justify-between w-full bg-gradient-to-r from-green-500 via-emerald-600 to-green-700 hover:from-green-400 hover:to-emerald-500 text-white font-title text-base sm:text-lg font-bold py-3.5 px-6 rounded-2xl border-2 border-amber-300 shadow-xl transition-all">
-          <div class="flex items-center gap-3">
-            <span
-              class="w-10 h-10 rounded-xl bg-white/20 border border-white/30 flex items-center justify-center text-xl shadow-sm">
-              💬
-            </span>
-            <div class="text-left">
-              <span class="block leading-tight drop-shadow">Confirmar Asistencia</span>
-              <span class="text-xs text-emerald-100 font-normal font-sans">Vía WhatsApp con Jheremy y Estefany</span>
-            </div>
-          </div>
-          <svg class="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24"
-            stroke="currentColor" stroke-width="2.5">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
-          </svg>
-        </a>
-
-      </div>
     </header>
 
     <!-- ======================================================== -->
-    <!-- 3. SECCIÓN INTERACTIVA 1: MINIJUEGO CON PREMIO           -->
-    <!-- ======================================================== -->
-    <section
-      class="glass-card rounded-3xl p-5 sm:p-7 text-center relative overflow-hidden border-4 border-amber-400/90 shadow-2xl">
-
-      <!-- Aviso de Premio Especial Safari -->
-      <div class="mb-4">
-        <span
-          class="inline-flex items-center gap-1.5 bg-gradient-to-r from-amber-600 via-amber-700 to-amber-800 text-amber-100 text-xs font-bold uppercase tracking-wider px-4 py-1.5 rounded-full mb-2 shadow-md border border-amber-300">
-          <span>🌿</span> ¡Misión Safari en la Selva! <span>🏆</span>
-        </span>
-        <h2 class="font-title text-2xl sm:text-3xl font-bold text-emerald-950 mb-1">
-          ¡Ayuda a la cigüeña en la selva de Claire! 🦁✨
-        </h2>
-        <p class="text-xs sm:text-sm text-gray-600 max-w-md mx-auto">
-          Toca o haz clic para volar y esquivar <span class="font-bold text-emerald-700">20 cañas de bambú y
-            flores</span>.
-          <strong class="text-rose-600 block sm:inline mt-1 sm:mt-0 font-semibold">¡Los que completen el reto reclaman
-            su premio especial con Jheremy y Estefany el día de la fiesta! 🎁</strong>
-        </p>
-      </div>
-
-      <!-- Contenedor del Lienzo Arcade -->
-      <div id="gameContainer"
-        class="relative w-full max-w-[340px] mx-auto rounded-2xl overflow-hidden border-4 border-amber-400/90 shadow-xl bg-gradient-to-b from-amber-100 via-emerald-50 to-teal-100 select-none cursor-pointer">
-
-        <!-- Canvas HTML5 -->
-        <canvas id="gameCanvas" width="340" height="420" class="block w-full h-auto cursor-pointer touch-none"></canvas>
-
-        <!-- Overlay: Pantalla de Inicio -->
-        <div id="gameStartOverlay"
-          class="absolute inset-0 bg-emerald-950/50 backdrop-blur-[2px] flex flex-col items-center justify-center p-6 text-white text-center cursor-pointer transition-opacity duration-300">
-          <div
-            class="w-16 h-16 rounded-2xl bg-gradient-to-br from-amber-400 to-amber-600 text-3xl flex items-center justify-center mb-3 shadow-xl border-2 border-amber-200 animate-bounce">
-            🕊️
-          </div>
-          <p class="font-title text-2xl font-bold text-amber-100 drop-shadow mb-1">¡Toca para Iniciar el Safari!</p>
-          <p
-            class="text-xs text-emerald-100 bg-emerald-900/60 px-3.5 py-1 rounded-full mb-2 border border-emerald-400/30">
-            Esquiva los bambús y alcanza los 20 niveles 🌿
-          </p>
-          <span
-            class="text-[11px] bg-gradient-to-r from-amber-400 to-amber-500 text-amber-950 font-bold px-4 py-1.5 rounded-full shadow border border-amber-200">
-            ¡Premio asegurado en el festejo! 🎁🦁
-          </span>
-        </div>
-
-        <!-- Overlay: Pantalla de Victoria con Formulario de Registro para Premio -->
-        <div id="gameWinOverlay"
-          class="hidden absolute inset-0 bg-gradient-to-b from-emerald-900/95 via-teal-900/95 to-amber-950/95 backdrop-blur-sm flex flex-col items-center justify-center p-4 text-white text-center animate-fade overflow-y-auto">
-          <div class="text-4xl mb-1 animate-bounce">🏆🦁🎁</div>
-          <h3 class="font-title text-2xl font-bold text-amber-300 mb-0.5">¡Misión Cumplida!</h3>
-          <p class="text-[11px] text-amber-100 mb-2.5 max-w-[260px] leading-tight">
-            ¡Completaste los 20 niveles cruzando la selva! Registra tu nombre para reclamar tu premio con Jheremy y
-            Estefany.
-          </p>
-
-          <!-- Formulario de Registro -->
-          <div id="winnerFormBox"
-            class="w-full max-w-[270px] bg-amber-50/95 text-gray-800 rounded-2xl p-3.5 shadow-2xl mb-2 text-left border-2 border-amber-400">
-            <label for="winnerNameInput"
-              class="block text-[11px] font-bold text-amber-950 uppercase tracking-wider mb-1">
-              Tu Nombre y Apellido:
-            </label>
-            <input type="text" id="winnerNameInput" placeholder="Ej: Tía Mariana Romero" maxlength="50"
-              class="w-full px-3 py-2 text-xs rounded-xl border border-amber-300 bg-white focus:outline-none focus:ring-2 focus:ring-emerald-500 mb-2 font-medium">
-
-            <button id="btnSubmitWinner" type="button"
-              class="w-full btn-bounce bg-gradient-to-r from-emerald-600 to-teal-700 hover:from-emerald-500 hover:to-teal-600 text-white font-title text-xs font-bold py-2.5 px-3 rounded-xl shadow-md border border-amber-300 transition flex items-center justify-center gap-1.5 cursor-pointer">
-              <span>¡Anotarme para mi Premio!</span>
-              <span>🎁</span>
-            </button>
-            <p id="winnerFeedback" class="hidden text-[10px] mt-1 font-semibold text-rose-600 text-center"></p>
-          </div>
-
-          <!-- Mensaje de éxito tras registrarse -->
-          <div id="winnerSuccessBox"
-            class="hidden w-full max-w-[270px] bg-gradient-to-r from-emerald-600 to-teal-700 text-white rounded-2xl p-3 shadow-xl mb-2 text-center border border-amber-300">
-            <span class="text-2xl block mb-1">🎉🦁</span>
-            <p class="font-bold font-title text-sm mb-0.5 text-amber-200">¡Registrado con Éxito!</p>
-            <p class="text-[11px] text-emerald-100">
-              Dile tu nombre a los papis en la fiesta para entregarte tu premio especial.
-            </p>
-          </div>
-
-          <button id="btnPlayAgain"
-            class="btn-bounce bg-white/20 hover:bg-white/30 text-amber-100 font-title font-bold px-4 py-1.5 rounded-full border border-amber-300/50 text-xs transition cursor-pointer">
-            Jugar otra vez 🔄
-          </button>
-        </div>
-
-        <!-- Overlay: Game Over -->
-        <div id="gameOverOverlay"
-          class="hidden absolute inset-0 bg-emerald-950/85 backdrop-blur-sm flex flex-col items-center justify-center p-6 text-white text-center cursor-pointer">
-          <div class="text-4xl mb-2">🌿💥</div>
-          <h3 class="font-title text-2xl font-bold text-amber-300 mb-1">¡Casi lo logras!</h3>
-          <p id="gameOverScoreText" class="text-xs text-emerald-100 mb-4">
-            Nivel alcanzado: 0 de 20
-          </p>
-          <button id="btnRetry"
-            class="btn-bounce bg-gradient-to-r from-amber-500 to-amber-600 text-white font-title font-bold px-6 py-2.5 rounded-full shadow-lg border-2 border-amber-300 hover:brightness-110 transition-all text-sm cursor-pointer">
-            Reintentar Safari 🔁
-          </button>
-        </div>
-      </div>
-
-      <!-- Barra informativa del juego -->
-      <div class="mt-3 flex items-center justify-center text-xs font-semibold">
-        <span
-          class="flex items-center gap-1.5 bg-amber-100/90 text-amber-950 px-4 py-1.5 rounded-full border border-amber-300 shadow-sm">
-          <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
-          <span>Objetivo: 20 niveles para ganar tu premio</span>
-          <span>🏆</span>
-        </span>
-      </div>
-    </section>
-
-    <!-- ======================================================== -->
-    <!-- 4. SECCIÓN INTERACTIVA 2: EL COCHECITO DE LOS DESEOS     -->
+    <!-- 3. EL COCHECITO DE LOS DESEOS Y BENDICIONES              -->
     <!-- ======================================================== -->
     <section class="glass-card rounded-3xl p-5 sm:p-7 relative overflow-hidden border-4 border-amber-400/90 shadow-2xl">
 
@@ -1170,8 +949,8 @@
       <div
         class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-emerald-950/60 border border-amber-400/40 backdrop-blur-sm mb-2 shadow-lg">
         <span>🦁</span>
-        <span class="font-title text-sm font-bold text-amber-300">¡Te esperamos para celebrar a la pequeña
-          <span id="footerBabyName">Claire</span>!</span>
+        <span class="font-title text-sm font-bold text-amber-300">¡Gracias por celebrar con nosotros a la pequeña
+        <span id="footerBabyName">Claire</span>!</span>
         <span>🎀</span>
       </div>
       <p class="font-medium text-amber-100/90 mb-1">
@@ -1198,33 +977,12 @@
         const el = document.getElementById(id);
         if (el) el.innerText = text;
       }
-      function setHrefSafe(id, href) {
-        const el = document.getElementById(id);
-        if (el) el.href = href;
-      }
 
-      setTextSafe('pageTitle', `¡Baby Shower de ${CONFIG.babyName}! 🍼✨`);
+      setTextSafe('pageTitle', `¡Bienvenidos a la Fiesta de ${CONFIG.babyName}! 🦁🎉✨`);
       setTextSafe('heroBabyName', CONFIG.babyName);
       setTextSafe('footerBabyName', CONFIG.babyName);
-      setTextSafe('heroSubtitle', CONFIG.eventSubtitle);
-      setTextSafe('heroDateDisplay', CONFIG.eventDateText);
-      setTextSafe('heroTimeDisplay', CONFIG.eventTimeText);
-
-      // Configurar Enlace a Google Calendar
-      const calendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE`
-        + `&text=${encodeURIComponent(CONFIG.calendarTitle)}`
-        + `&dates=${CONFIG.calendarStartDate}/${CONFIG.calendarEndDate}`
-        + `&details=${encodeURIComponent(CONFIG.calendarDetails)}`
-        + `&location=${encodeURIComponent(CONFIG.calendarLocation)}`;
-      setHrefSafe('btnCalendarLink', calendarUrl);
-
-      // Configurar Enlace a Google Maps
-      const mapsUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(CONFIG.mapsCoords)}`;
-      setHrefSafe('btnMapsLink', mapsUrl);
-
-      // Configurar Enlace a WhatsApp
-      const waUrl = `https://wa.me/${CONFIG.whatsappNumber}?text=${encodeURIComponent(CONFIG.whatsappMessage)}`;
-      setHrefSafe('btnWhatsAppLink', waUrl);
+      setTextSafe('heroSubtitle', CONFIG.partySubtitle);
+      setTextSafe('heroDatePlaceDisplay', CONFIG.partyDatePlace);
 
       /* ---------------------------------------------------- */
       /* 1. MÚSICA DE FONDO (Garantizada Local & Online)      */
@@ -1364,248 +1122,8 @@
 
 
       /* ---------------------------------------------------- */
-      /* 2. MINIJUEGO ARCADE: ¡Ayuda a la cigüeña!            */
+      /* 2. EFECTO DE CONFETI CELEBRATORIO                     */
       /* ---------------------------------------------------- */
-      const canvas = document.getElementById('gameCanvas');
-      const ctx = canvas.getContext('2d');
-      const gameContainer = document.getElementById('gameContainer');
-      const gameStartOverlay = document.getElementById('gameStartOverlay');
-      const gameWinOverlay = document.getElementById('gameWinOverlay');
-      const gameOverOverlay = document.getElementById('gameOverOverlay');
-      const gameOverScoreText = document.getElementById('gameOverScoreText');
-      const btnPlayAgain = document.getElementById('btnPlayAgain');
-      const btnRetry = document.getElementById('btnRetry');
-
-      // Elementos del formulario de ganador
-      const winnerFormBox = document.getElementById('winnerFormBox');
-      const winnerSuccessBox = document.getElementById('winnerSuccessBox');
-      const winnerNameInput = document.getElementById('winnerNameInput');
-      const btnSubmitWinner = document.getElementById('btnSubmitWinner');
-      const winnerFeedback = document.getElementById('winnerFeedback');
-
-      const TARGET_SCORE = 20; // 20 niveles para ganar tu premio
-      const GRAVITY = 0.28;
-      const JUMP = -5.4;
-      const BASE_PIPE_SPEED = 1.9;
-      const PIPE_SPAWN_INTERVAL = 115;
-      const PIPE_GAP = 145;
-
-      function getPipeSpeed(currentScore) {
-        return BASE_PIPE_SPEED + Math.min(1.2, currentScore * 0.05);
-      }
-
-      // Dibujo de rectángulo redondeado 100% compatible con todos los navegadores
-      function drawSafeRoundedRect(c, x, y, w, h, r) {
-        if (w <= 0 || h <= 0) return;
-        const radius = typeof r === 'number' ? r : (Array.isArray(r) ? r[0] || 6 : 6);
-        const safeR = Math.max(0, Math.min(radius, Math.abs(w) / 2, Math.abs(h) / 2));
-        c.beginPath();
-        c.moveTo(x + safeR, y);
-        c.lineTo(x + w - safeR, y);
-        c.quadraticCurveTo(x + w, y, x + w, y + safeR);
-        c.lineTo(x + w, y + h - safeR);
-        c.quadraticCurveTo(x + w, y + h, x + w - safeR, y + h);
-        c.lineTo(x + safeR, y + h);
-        c.quadraticCurveTo(x, y + h, x, y + h - safeR);
-        c.lineTo(x, y + safeR);
-        c.quadraticCurveTo(x, y, x + safeR, y);
-        c.closePath();
-      }
-
-      let gameState = 'START';
-      let animationFrameId = null;
-      let frameCount = 0;
-      let score = 0;
-
-      const stork = {
-        x: 65,
-        y: canvas.height / 2,
-        radius: 16,
-        velocity: 0,
-        wingAngle: 0,
-        reset() {
-          this.x = 65;
-          this.y = canvas.height / 2;
-          this.velocity = 0;
-          this.wingAngle = 0;
-        },
-        flap() {
-          this.velocity = JUMP;
-        },
-        update() {
-          this.velocity += GRAVITY;
-          this.y += this.velocity;
-          this.wingAngle += 0.2;
-        },
-        draw() {
-          ctx.save();
-          ctx.translate(this.x, this.y);
-
-          const tilt = Math.min(Math.PI / 4, Math.max(-Math.PI / 4, this.velocity * 0.08));
-          ctx.rotate(tilt);
-
-          ctx.fillStyle = '#FFFFFF';
-          ctx.beginPath();
-          ctx.ellipse(0, 0, 15, 11, 0, 0, Math.PI * 2);
-          ctx.fill();
-          ctx.lineWidth = 1.5;
-          ctx.strokeStyle = '#FBCFE8';
-          ctx.stroke();
-
-          ctx.beginPath();
-          ctx.arc(10, -5, 8, 0, Math.PI * 2);
-          ctx.fill();
-          ctx.stroke();
-
-          ctx.fillStyle = '#374151';
-          ctx.beginPath();
-          ctx.arc(12, -7, 1.8, 0, Math.PI * 2);
-          ctx.fill();
-
-          ctx.fillStyle = '#F97316';
-          ctx.beginPath();
-          ctx.moveTo(16, -6);
-          ctx.lineTo(27, -4);
-          ctx.lineTo(16, -2);
-          ctx.closePath();
-          ctx.fill();
-
-          ctx.fillStyle = '#FDF2F8';
-          ctx.beginPath();
-          const wingFlap = Math.sin(this.wingAngle) * 6;
-          ctx.ellipse(-3, -2 + wingFlap, 9, 6, 0.2, 0, Math.PI * 2);
-          ctx.fill();
-          ctx.stroke();
-
-          ctx.save();
-          ctx.translate(23, -2);
-          ctx.strokeStyle = '#F472B6';
-          ctx.lineWidth = 1.5;
-          ctx.beginPath();
-          ctx.moveTo(0, 0);
-          ctx.lineTo(-3, 14);
-          ctx.stroke();
-
-          ctx.fillStyle = '#F472B6';
-          ctx.beginPath();
-          ctx.arc(-3, 18, 7, 0, Math.PI * 2);
-          ctx.fill();
-
-          ctx.fillStyle = '#FFFFFF';
-          ctx.font = '8px sans-serif';
-          ctx.fillText('❤', -6, 21);
-          ctx.restore();
-
-          ctx.restore();
-        }
-      };
-
-      let pipes = [];
-
-      function createPipe() {
-        const minHeight = 45;
-        const maxHeight = canvas.height - PIPE_GAP - minHeight;
-        const topHeight = Math.floor(Math.random() * (maxHeight - minHeight + 1)) + minHeight;
-        pipes.push({
-          x: canvas.width,
-          topHeight: topHeight,
-          bottomY: topHeight + PIPE_GAP,
-          passed: false
-        });
-      }
-
-      function drawBambooObstacle(x, y, width, height, isTop) {
-        ctx.save();
-        // Gradiente natural del bambú selvático
-        const grad = ctx.createLinearGradient(x, 0, x + width, 0);
-        grad.addColorStop(0, '#15803D');
-        grad.addColorStop(0.3, '#22C55E');
-        grad.addColorStop(0.7, '#4ADE80');
-        grad.addColorStop(1, '#166534');
-
-        ctx.fillStyle = grad;
-        ctx.strokeStyle = '#0B2C1C';
-        ctx.lineWidth = 1.5;
-
-        drawSafeRoundedRect(ctx, x, y, width, height, 10);
-        ctx.fill();
-        ctx.stroke();
-
-        // Nudos y anillos del bambú
-        const ringSpacing = 32;
-        const startY = isTop ? 0 : y;
-        const endY = isTop ? y + height : canvas.height;
-
-        for (let ry = startY + 18; ry < endY - 14; ry += ringSpacing) {
-          ctx.fillStyle = '#14532D';
-          ctx.fillRect(x - 2, ry, width + 4, 3);
-          ctx.fillStyle = '#BBF7D0';
-          ctx.fillRect(x - 1, ry + 3, width + 2, 1.5);
-        }
-
-        // Nudo principal en la apertura del camino
-        const capY = isTop ? y + height - 8 : y;
-        ctx.fillStyle = '#15803D';
-        ctx.fillRect(x - 3, capY, width + 6, 8);
-        ctx.fillStyle = '#FEF08A';
-        ctx.fillRect(x - 2, capY + (isTop ? 6 : 1), width + 4, 2);
-
-        // Hoja verde tropical que brota del nudo
-        ctx.fillStyle = '#22C55E';
-        ctx.beginPath();
-        if (isTop) {
-          ctx.ellipse(x - 5, y + height - 4, 8, 4, -0.4, 0, Math.PI * 2);
-          ctx.ellipse(x + width + 5, y + height - 4, 8, 4, 0.4, 0, Math.PI * 2);
-        } else {
-          ctx.ellipse(x - 5, y + 4, 8, 4, 0.4, 0, Math.PI * 2);
-          ctx.ellipse(x + width + 5, y + 4, 8, 4, -0.4, 0, Math.PI * 2);
-        }
-        ctx.fill();
-
-        // Flor de hibisco rosa en el centro del nudo
-        const flowerY = isTop ? y + height - 4 : y + 4;
-        const flowerX = x + width / 2;
-        ctx.fillStyle = '#FB7185';
-        for (let a = 0; a < Math.PI * 2; a += Math.PI / 2.5) {
-          ctx.beginPath();
-          ctx.arc(flowerX + Math.cos(a) * 4, flowerY + Math.sin(a) * 4, 3, 0, Math.PI * 2);
-          ctx.fill();
-        }
-        ctx.fillStyle = '#FDE047';
-        ctx.beginPath();
-        ctx.arc(flowerX, flowerY, 2, 0, Math.PI * 2);
-        ctx.fill();
-
-        ctx.restore();
-      }
-
-      function drawCanvasBackground() {
-        // Fondo del juego: Cielo tropical de El Libro de la Selva
-        const bgGrad = ctx.createLinearGradient(0, 0, 0, canvas.height);
-        bgGrad.addColorStop(0, '#FEF9C3'); // Sol cálido
-        bgGrad.addColorStop(0.35, '#E0F2FE'); // Cielo abierto
-        bgGrad.addColorStop(0.75, '#DCFCE7'); // Copa de los árboles
-        bgGrad.addColorStop(1, '#86EFAC'); // Suelo selvático
-        ctx.fillStyle = bgGrad;
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-        // Enredaderas colgantes en la parte superior
-        ctx.fillStyle = 'rgba(21, 128, 61, 0.28)';
-        for (let vi = 20; vi < canvas.width; vi += 40) {
-          ctx.beginPath();
-          ctx.arc(vi, 0, 16, 0, Math.PI);
-          ctx.fill();
-        }
-
-        // Pequeñas hojas decorativas flotando
-        ctx.fillStyle = 'rgba(34, 197, 94, 0.2)';
-        ctx.beginPath();
-        ctx.arc(50, 45, 5, 0, Math.PI * 2);
-        ctx.arc(280, 85, 4, 0, Math.PI * 2);
-        ctx.arc(150, 360, 6, 0, Math.PI * 2);
-        ctx.fill();
-      }
-
       function launchWinConfetti() {
         if (typeof confetti === 'function') {
           const count = 220;
@@ -1630,199 +1148,8 @@
         }
       }
 
-      function gameLoop() {
-        if (gameState !== 'PLAYING') return;
-
-        frameCount++;
-        drawCanvasBackground();
-
-        if (frameCount % PIPE_SPAWN_INTERVAL === 0) {
-          createPipe();
-        }
-
-        stork.update();
-        stork.draw();
-
-        // Si toca el techo, rebota suavemente sin morir
-        if (stork.y - stork.radius < 0) {
-          stork.y = stork.radius;
-          stork.velocity = 0;
-        }
-
-        // Si cae al suelo, finaliza el juego
-        if (stork.y + stork.radius >= canvas.height - 10) {
-          triggerGameOver();
-          return;
-        }
-
-        const currentSpeed = getPipeSpeed(score);
-
-        for (let i = pipes.length - 1; i >= 0; i--) {
-          const p = pipes[i];
-          p.x -= currentSpeed;
-
-          const pipeWidth = 48;
-
-          drawBambooObstacle(p.x, 0, pipeWidth, p.topHeight, true);
-          drawBambooObstacle(p.x, p.bottomY, pipeWidth, canvas.height - p.bottomY, false);
-
-          // Caja de colisión justa y suave
-          const storkBox = {
-            left: stork.x - 9,
-            right: stork.x + 11,
-            top: stork.y - 8,
-            bottom: stork.y + 12
-          };
-
-          const hitTop = storkBox.right > p.x && storkBox.left < p.x + pipeWidth && storkBox.top < p.topHeight;
-          const hitBottom = storkBox.right > p.x && storkBox.left < p.x + pipeWidth && storkBox.bottom > p.bottomY;
-
-          if (hitTop || hitBottom) {
-            triggerGameOver();
-            return;
-          }
-
-          if (!p.passed && p.x + pipeWidth < stork.x) {
-            p.passed = true;
-            score++;
-
-            if (score >= TARGET_SCORE) {
-              triggerWin();
-              return;
-            }
-          }
-
-          if (p.x + pipeWidth < -20) {
-            pipes.splice(i, 1);
-          }
-        }
-
-        drawInGameScore();
-        animationFrameId = requestAnimationFrame(gameLoop);
-      }
-
-      function drawInGameScore() {
-        ctx.save();
-        const badgeWidth = 120;
-        ctx.fillStyle = 'rgba(255, 253, 245, 0.92)';
-        drawSafeRoundedRect(ctx, canvas.width / 2 - badgeWidth / 2, 12, badgeWidth, 30, 15);
-        ctx.fill();
-        ctx.strokeStyle = '#F59E0B';
-        ctx.lineWidth = 2;
-        ctx.stroke();
-
-        ctx.fillStyle = '#051A10';
-        ctx.font = 'bold 14px Fredoka, sans-serif';
-        ctx.textAlign = 'center';
-        ctx.textBaseline = 'middle';
-        ctx.fillText(`Nivel: ${score} / ${TARGET_SCORE}`, canvas.width / 2, 27);
-        ctx.restore();
-      }
-
-      function startGame() {
-        pipes = [];
-        frameCount = 0;
-        score = 0;
-        stork.reset();
-        gameState = 'PLAYING';
-
-        gameStartOverlay.classList.add('hidden');
-        gameWinOverlay.classList.add('hidden');
-        gameOverOverlay.classList.add('hidden');
-
-        if (animationFrameId) cancelAnimationFrame(animationFrameId);
-        gameLoop();
-      }
-
-      function triggerWin() {
-        gameState = 'WON';
-        if (animationFrameId) cancelAnimationFrame(animationFrameId);
-        gameStartOverlay.classList.add('hidden');
-        gameOverOverlay.classList.add('hidden');
-        gameWinOverlay.classList.remove('hidden');
-
-        if (winnerFormBox) winnerFormBox.classList.remove('hidden');
-        if (winnerSuccessBox) winnerSuccessBox.classList.add('hidden');
-        if (winnerFeedback) winnerFeedback.classList.add('hidden');
-        if (winnerNameInput) winnerNameInput.value = '';
-        if (btnSubmitWinner) {
-          btnSubmitWinner.disabled = false;
-          btnSubmitWinner.innerHTML = `<span>¡Anotarme para mi Premio!</span> <span>🎁</span>`;
-        }
-
-        launchWinConfetti();
-      }
-
-      function triggerGameOver() {
-        gameState = 'GAMEOVER';
-        if (animationFrameId) cancelAnimationFrame(animationFrameId);
-        gameOverScoreText.innerText = `Nivel alcanzado: ${score} de ${TARGET_SCORE}`;
-        gameOverOverlay.classList.remove('hidden');
-      }
-
-      function handleAction(e) {
-        if (e && e.cancelable && e.type !== 'keydown') e.preventDefault();
-        playMusic();
-        if (gameState === 'START') {
-          startGame();
-          stork.flap();
-        } else if (gameState === 'PLAYING') {
-          stork.flap();
-        }
-      }
-
-      // Soporte táctil y ratón en Canvas, Overlay y Contenedor
-      canvas.addEventListener('pointerdown', handleAction);
-      gameStartOverlay.addEventListener('pointerdown', handleAction);
-      if (gameContainer) {
-        gameContainer.addEventListener('pointerdown', (e) => {
-          if (e.target.tagName !== 'BUTTON' && e.target.tagName !== 'INPUT') {
-            handleAction(e);
-          }
-        });
-      }
-
-      btnPlayAgain.addEventListener('click', (e) => {
-        e.stopPropagation();
-        startGame();
-      });
-
-      btnRetry.addEventListener('click', (e) => {
-        e.stopPropagation();
-        startGame();
-      });
-
-      gameOverOverlay.addEventListener('pointerdown', (e) => {
-        if (e.target.tagName !== 'BUTTON') {
-          e.preventDefault();
-          startGame();
-        }
-      });
-
-      // Soporte para Teclado (Barra Espaciadora o Flecha Arriba)
-      window.addEventListener('keydown', (e) => {
-        if (e.code === 'Space' || e.code === 'ArrowUp' || e.key === ' ') {
-          const rect = canvas.getBoundingClientRect();
-          if (rect.top < window.innerHeight && rect.bottom > 0) {
-            e.preventDefault();
-            if (gameState === 'GAMEOVER') {
-              startGame();
-            } else {
-              handleAction(e);
-            }
-          }
-        }
-      });
-
-      function drawInitialScreen() {
-        drawCanvasBackground();
-        stork.draw();
-      }
-      drawInitialScreen();
-
-
       /* ---------------------------------------------------- */
-      /* 3. BASE DE DATOS SUPABASE (Deseos y Ganadores)       */
+      /* 3. BASE DE DATOS SUPABASE (Cochecito de Deseos)      */
       /* ---------------------------------------------------- */
       const SUPABASE_URL = CONFIG.supabaseUrl;
       const SUPABASE_KEY = CONFIG.supabaseKey;
@@ -1837,50 +1164,6 @@
           console.error('Error inicializando Supabase Client:', e);
         }
       }
-
-      /* --- REGISTRO DE GANADORES DEL MINIJUEGO --- */
-      async function submitWinner(nombre) {
-        if (isSupabaseConfigured && supabaseClient) {
-          const { data, error } = await supabaseClient
-            .from('ganadores')
-            .insert([{ nombre }]);
-          if (error) throw error;
-          return data;
-        } else {
-          throw new Error('Supabase no está conectado para registrar al ganador.');
-        }
-      }
-
-      btnSubmitWinner.addEventListener('click', async (e) => {
-        e.preventDefault();
-        const nombre = winnerNameInput.value.trim();
-
-        if (!nombre) {
-          winnerFeedback.innerText = 'Por favor escribe tu nombre y apellido.';
-          winnerFeedback.classList.remove('hidden');
-          return;
-        }
-
-        winnerFeedback.classList.add('hidden');
-        btnSubmitWinner.disabled = true;
-        btnSubmitWinner.innerHTML = `
-          <div class="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-          <span>Guardando...</span>
-        `;
-
-        try {
-          await submitWinner(nombre);
-          winnerFormBox.classList.add('hidden');
-          winnerSuccessBox.classList.remove('hidden');
-          launchWinConfetti();
-        } catch (err) {
-          console.error('Error al registrar ganador en Supabase:', err);
-          winnerFeedback.innerText = 'No se pudo guardar en línea. Revisa la tabla ganadores.';
-          winnerFeedback.classList.remove('hidden');
-          btnSubmitWinner.disabled = false;
-          btnSubmitWinner.innerHTML = `<span>¡Anotarme para mi Premio!</span> <span>🎁</span>`;
-        }
-      });
 
 
       /* --- COCHECITO DE LOS DESEOS (CARTAS FLOTANTES DE AMOR) --- */
