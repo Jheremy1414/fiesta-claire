@@ -3,7 +3,10 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="theme-color" content="#0B2C1C">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <title id="pageTitle">¡Bienvenidos a la Fiesta de Claire! 🦁🎉✨</title>
 
   <!-- Google Fonts: Fredoka & Plus Jakarta Sans -->
@@ -192,6 +195,65 @@
     .no-scrollbar {
       -ms-overflow-style: none;
       scrollbar-width: none;
+    }
+
+    /* Luciérnagas Tropicales Mágicas flotando en la Selva */
+    @keyframes fireflyFloat {
+      0% {
+        transform: translate3d(0, 0, 0) scale(0.6);
+        opacity: 0.1;
+      }
+      30% {
+        opacity: 0.95;
+      }
+      60% {
+        transform: translate3d(28px, -55px, 0) scale(1.15);
+        opacity: 0.9;
+      }
+      80% {
+        opacity: 0.5;
+      }
+      100% {
+        transform: translate3d(-18px, -115px, 0) scale(0.6);
+        opacity: 0;
+      }
+    }
+
+    .firefly {
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      background: radial-gradient(circle, #FEF08A 0%, #F59E0B 70%, rgba(245, 158, 11, 0) 100%);
+      border-radius: 50%;
+      box-shadow: 0 0 8px #FACC15, 0 0 16px #EAB308;
+      pointer-events: none;
+      animation: fireflyFloat 6.5s ease-in-out infinite;
+    }
+
+    /* Chips interactivos de dedicatorias rápidas para celular */
+    .wish-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      background: #FFFBEB;
+      border: 1.5px solid #FCD34D;
+      color: #78350F;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.4rem 0.8rem;
+      border-radius: 9999px;
+      cursor: pointer;
+      transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+      user-select: none;
+      -webkit-user-select: none;
+      white-space: nowrap;
+      box-shadow: 0 2px 4px rgba(120, 53, 15, 0.08);
+    }
+
+    .wish-chip:active {
+      transform: scale(0.93);
+      background: #FEF3C7;
+      border-color: #F59E0B;
     }
 
     /* Animación del Cochecito Andando / Rolling Stroller */
@@ -489,19 +551,27 @@
     <div class="absolute top-28 left-8 text-2xl select-none butterfly-1 opacity-75">🦋</div>
     <div class="absolute top-1/3 right-10 text-2xl select-none butterfly-2 opacity-70">✨</div>
     <div class="absolute bottom-40 left-12 text-2xl select-none butterfly-1 opacity-65">🌸</div>
+
+    <!-- Luciérnagas Mágicas Flotando (Especial para Celulares) -->
+    <div class="firefly" style="bottom: 12%; left: 15%; animation-delay: 0s;"></div>
+    <div class="firefly" style="bottom: 22%; right: 18%; animation-delay: 1.8s;"></div>
+    <div class="firefly" style="bottom: 42%; left: 10%; animation-delay: 3.2s;"></div>
+    <div class="firefly" style="bottom: 58%; right: 12%; animation-delay: 0.9s;"></div>
+    <div class="firefly" style="bottom: 72%; left: 20%; animation-delay: 4.5s;"></div>
+    <div class="firefly" style="bottom: 84%; right: 22%; animation-delay: 2.6s;"></div>
   </div>
 
   <!-- ======================================================== -->
   <!-- 1. BOTÓN FLOTANTE DE MÚSICA (Fijo en pantalla)            -->
   <!-- ======================================================== -->
-  <div class="fixed bottom-6 right-5 z-50 flex items-center gap-2">
+  <div class="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 flex items-center gap-2" style="bottom: max(1rem, env(safe-area-inset-bottom));">
     <span id="musicBadge"
-      class="bg-[#FEF3C7] text-xs font-title font-bold text-amber-900 px-3.5 py-1.5 rounded-full shadow-xl border-2 border-amber-400 animate-pulseSubtle cursor-pointer select-none">
+      class="hidden sm:inline-block bg-[#FEF3C7] text-xs font-title font-bold text-amber-900 px-3.5 py-1.5 rounded-full shadow-xl border-2 border-amber-400 animate-pulseSubtle cursor-pointer select-none">
       Toca para Música 🎵🐾
     </span>
 
     <button id="musicToggleBtn" type="button" aria-label="Reproducir o pausar música de fondo"
-      class="relative w-14 h-14 rounded-full bg-gradient-to-br from-emerald-600 via-emerald-700 to-teal-800 text-amber-300 shadow-2xl border-3 border-amber-400 flex items-center justify-center btn-bounce hover:scale-110 active:scale-95 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-amber-300 cursor-pointer">
+      class="relative w-13 h-13 sm:w-14 sm:h-14 rounded-full bg-gradient-to-br from-emerald-600 via-emerald-700 to-teal-800 text-amber-300 shadow-2xl border-3 border-amber-400 flex items-center justify-center btn-bounce hover:scale-110 active:scale-95 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-amber-300 cursor-pointer">
 
       <span id="soundWave"
         class="hidden absolute inset-0 rounded-full border-2 border-amber-300 animate-ping opacity-45"></span>
@@ -880,19 +950,19 @@
             </p>
 
             <!-- Controles de Navegación del carrusel flotante -->
-            <div class="flex items-center justify-between mt-3 pt-2 border-t border-amber-200/80 text-xs">
-              <button id="btnPrevWish" type="button"
-                class="btn-bounce text-amber-800 hover:text-emerald-700 font-semibold px-2 py-1 rounded-lg transition flex items-center gap-1 cursor-pointer">
+            <div class="flex items-center justify-between mt-3 pt-2.5 border-t border-amber-200/80 text-xs">
+              <button id="btnPrevWish" type="button" aria-label="Ver dedicatoria anterior"
+                class="btn-bounce text-amber-900 bg-amber-100/90 hover:bg-amber-200 active:scale-95 font-title font-bold px-3 py-1.5 rounded-xl border border-amber-300 shadow-sm transition flex items-center gap-1 cursor-pointer">
                 <span>◀</span> <span>Anterior</span>
               </button>
 
               <span id="wishCounterBadge"
-                class="text-[11px] bg-amber-100 text-amber-900 font-bold px-2.5 py-0.5 rounded-full border border-amber-300 select-none">
+                class="text-[11px] bg-amber-100/90 text-amber-900 font-title font-bold px-3 py-1 rounded-full border border-amber-300 select-none shadow-sm">
                 0 de 0
               </span>
 
-              <button id="btnNextWish" type="button"
-                class="btn-bounce text-amber-800 hover:text-emerald-700 font-semibold px-2 py-1 rounded-lg transition flex items-center gap-1 cursor-pointer">
+              <button id="btnNextWish" type="button" aria-label="Ver siguiente dedicatoria"
+                class="btn-bounce text-amber-900 bg-amber-100/90 hover:bg-amber-200 active:scale-95 font-title font-bold px-3 py-1.5 rounded-xl border border-amber-300 shadow-sm transition flex items-center gap-1 cursor-pointer">
                 <span>Siguiente</span> <span>▶</span>
               </button>
             </div>
@@ -901,41 +971,61 @@
 
       </div>
 
-      <!-- FORMULARIO DE DEDICATORIAS (PERMANENTEMENTE ABIERTO PARA LOS INVITADOS) -->
+      <!-- FORMULARIO DE DEDICATORIAS EN VIVO (OPTIMIZADO PARA CELULAR) -->
       <div class="mt-4 pt-3 border-t-2 border-amber-200/80">
-        <div class="text-center mb-2.5">
+        <div class="text-center mb-3">
           <span
-            class="inline-flex items-center gap-1.5 bg-gradient-to-r from-emerald-600 to-teal-700 text-white text-xs font-bold uppercase tracking-wider px-4 py-1 rounded-full shadow border border-amber-300">
+            class="inline-flex items-center gap-1.5 bg-gradient-to-r from-emerald-600 to-teal-700 text-white text-xs font-bold uppercase tracking-wider px-4 py-1.5 rounded-full shadow border border-amber-300">
             <span>✍️</span> Déjale tu Dedicatoria en Vivo <span>🦁</span>
           </span>
-          <h4 class="font-title font-bold text-emerald-950 text-sm mt-1.5">
+          <h4 class="font-title font-bold text-emerald-950 text-sm sm:text-base mt-1.5">
             Escribe tus bendiciones para que vuelen con el cochecito al instante
           </h4>
         </div>
 
         <form id="wishForm"
-          class="bg-[#FFFDF5]/95 p-4 sm:p-5 rounded-2xl border-2 border-amber-300 shadow-md space-y-3 transition-all">
+          class="bg-[#FFFDF5]/95 p-4 sm:p-5 rounded-2xl border-2 border-amber-300 shadow-lg space-y-3.5 transition-all">
           <div>
             <label for="userNameInput" class="block text-xs font-bold text-amber-950 uppercase tracking-wider mb-1">
               Tu Nombre o Familia:
             </label>
             <input type="text" id="userNameInput" placeholder="Ej: Tía Mariana y Familia" maxlength="50"
-              class="w-full px-3.5 py-2.5 text-xs sm:text-sm rounded-xl border border-amber-300 bg-white focus:outline-none focus:ring-2 focus:ring-emerald-500 font-medium">
+              class="w-full px-3.5 py-3 text-base sm:text-sm rounded-xl border-2 border-amber-300/80 bg-white focus:outline-none focus:ring-4 focus:ring-emerald-400/25 focus:border-emerald-600 font-medium text-gray-800 placeholder-gray-400 shadow-inner transition-all">
           </div>
 
           <div>
-            <label for="userMessageInput" class="block text-xs font-bold text-amber-950 uppercase tracking-wider mb-1">
-              Tu Mensaje de Amor:
-            </label>
+            <div class="flex items-center justify-between mb-1.5">
+              <label for="userMessageInput" class="block text-xs font-bold text-amber-950 uppercase tracking-wider">
+                Tu Mensaje de Amor:
+              </label>
+              <span id="charCounter" class="text-[11px] font-semibold text-amber-800">0 / 300</span>
+            </div>
+
+            <!-- Chips interactivos de inspiración rápida para celular -->
+            <div class="flex items-center gap-1.5 overflow-x-auto no-scrollbar pb-2 pt-0.5 -mx-1 px-1 mb-1">
+              <button type="button" class="wish-chip" data-text="¡Muchas bendiciones para la princesa Claire! 💖">
+                <span>💖</span> <span>¡Muchas bendiciones!</span>
+              </button>
+              <button type="button" class="wish-chip" data-text="¡Bienvenida al mundo hermosa Claire! 🌸✨">
+                <span>🌸</span> <span>¡Bienvenida Claire!</span>
+              </button>
+              <button type="button" class="wish-chip" data-text="¡Felicidades a los papis Jheremy y Estefany! 🦁👑">
+                <span>🦁</span> <span>¡Felicidades papis!</span>
+              </button>
+              <button type="button" class="wish-chip" data-text="¡Salud, amor y felicidad infinita! 🌟🌿">
+                <span>✨</span> <span>¡Salud y amor!</span>
+              </button>
+            </div>
+
             <textarea id="userMessageInput" rows="3" placeholder="Escribe tus bendiciones, oraciones y buenos deseos en vivo..."
               maxlength="300"
-              class="w-full px-3.5 py-2.5 text-xs sm:text-sm rounded-xl border border-amber-300 bg-white focus:outline-none focus:ring-2 focus:ring-emerald-500 resize-none font-medium"></textarea>
+              class="w-full px-3.5 py-3 text-base sm:text-sm rounded-xl border-2 border-amber-300/80 bg-white focus:outline-none focus:ring-4 focus:ring-emerald-400/25 focus:border-emerald-600 resize-none font-medium text-gray-800 placeholder-gray-400 shadow-inner transition-all"></textarea>
           </div>
 
           <div id="formFeedback" class="hidden text-xs py-2 px-3 rounded-lg font-medium text-center"></div>
 
           <button type="submit" id="btnSubmitWish"
-            class="w-full btn-bounce bg-gradient-to-r from-emerald-600 via-emerald-700 to-teal-800 hover:from-emerald-500 hover:to-teal-700 text-white font-title text-sm sm:text-base font-bold py-3 px-4 rounded-xl shadow-lg border-2 border-amber-300 transition flex items-center justify-center gap-2 cursor-pointer">
+            class="w-full btn-bounce bg-gradient-to-r from-emerald-600 via-emerald-700 to-teal-800 hover:from-emerald-500 hover:to-teal-700 active:scale-[0.98] text-white font-title text-base sm:text-lg font-bold py-3.5 px-4 rounded-xl shadow-xl border-2 border-amber-300 transition-all flex items-center justify-center gap-2 cursor-pointer">
             <span>Publicar Dedicatoria en Vivo</span>
             <span>🕊️💕🌿</span>
           </button>
@@ -1171,6 +1261,42 @@
       const userMessageInput = document.getElementById('userMessageInput');
       const btnSubmitWish = document.getElementById('btnSubmitWish');
       const formFeedback = document.getElementById('formFeedback');
+      const charCounter = document.getElementById('charCounter');
+
+      // Contador dinámico de caracteres para celular
+      if (userMessageInput && charCounter) {
+        userMessageInput.addEventListener('input', () => {
+          const len = userMessageInput.value.length;
+          charCounter.innerText = `${len} / 300`;
+          if (len >= 280) {
+            charCounter.classList.add('text-rose-600', 'font-bold');
+            charCounter.classList.remove('text-amber-800');
+          } else {
+            charCounter.classList.remove('text-rose-600', 'font-bold');
+            charCounter.classList.add('text-amber-800');
+          }
+        });
+      }
+
+      // Chips interactivos de inspiración rápida para celular
+      document.querySelectorAll('.wish-chip').forEach(chip => {
+        chip.addEventListener('click', () => {
+          const text = chip.getAttribute('data-text');
+          if (!text) return;
+          if (!userMessageInput.value || userMessageInput.value.trim() === '') {
+            userMessageInput.value = text;
+          } else {
+            userMessageInput.value = `${userMessageInput.value.trim()} ${text}`;
+          }
+          if (charCounter) {
+            charCounter.innerText = `${userMessageInput.value.length} / 300`;
+          }
+          if (navigator.vibrate) {
+            navigator.vibrate(18);
+          }
+          userMessageInput.focus();
+        });
+      });
 
       const spotlightLetterCard = document.getElementById('spotlightLetterCard');
       const spotlightPaperSheet = document.getElementById('spotlightPaperSheet');
@@ -1377,6 +1503,10 @@
 
           userNameInput.value = '';
           userMessageInput.value = '';
+          if (charCounter) charCounter.innerText = '0 / 300';
+          if (navigator.vibrate) {
+            navigator.vibrate([30, 40, 50]);
+          }
           // El formulario se mantiene abierto para que otros invitados también puedan escribir
           launchWinConfetti();
         } catch (err) {
@@ -1385,8 +1515,8 @@
         } finally {
           btnSubmitWish.disabled = false;
           btnSubmitWish.innerHTML = `
-            <span>Enviar Carta al Cochecito</span>
-            <span>🕊️💖</span>
+            <span>Publicar Dedicatoria en Vivo</span>
+            <span>🕊️💕🌿</span>
           `;
         }
       });
